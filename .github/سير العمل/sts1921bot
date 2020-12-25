@@ -1,0 +1,19 @@
+[pyrogram]
+api_id = 206432401
+api_hash =1460061880:AAHzefLjGcRsk2YCb2E8Ko9hoFee_zR-RwI
+
+from pyrogram import Client, Filters
+
+# التوكن الذي حصلت عليه من @botfather
+# مثال :
+# app = Client("bot", bot_token="1234567:ABCDEFGLLLL44GNVCCC")
+app = Client("اسم الجلسة", bot_token="التوكن")
+
+# اذا كانت الرسالة في الخاص و كانت الرسالة الامر /start
+@app.on_message(Filters.private & Filters.command('start'))
+def startmsg(client, message):
+    # البوت سيقوم بالرد عليك بهذه الرسالة
+    message.reply("اهلا بك في بوت عالم البرمجة")
+
+
+app.run() # لتشغيل البوت "long-polling"
